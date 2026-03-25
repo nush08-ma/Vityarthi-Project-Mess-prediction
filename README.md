@@ -13,51 +13,53 @@ A data-driven Python application designed to solve the real-world problem of unp
 
   5. Input Validation: Prevents processing errors by cross-referencing user inputs with historical schedules.
 
-🧠 Technical Block Explanation
-1. The Persistence Layer (SQL Database)
+## Technical Block Explanation
+### 1. The Persistence Layer (SQL Database)
 Function: initialize_db()
 
 How it works: This block initializes a local SQLite database. It creates a structured table to store "Historical Observations" such as the caterer name, time, and recorded wait times.
 
-Why it matters: This acts as the AI's Memory. In predictive modeling, the system needs a baseline of past truths to calculate future estimates.
+Why needed: This acts as the AI's Memory. In predictive modeling, the system needs a baseline of past truths to calculate future estimates.
 
-2. Dynamic Feature Extraction
+### 2. Menu Details
 Function: get_mess_details()
 
 How it works: This block uses specific SQL queries to filter the database. It ensures the user only sees the hours and dishes that actually belong to their chosen caterer.
 
-Why it matters: This is a Data Cleaning step. It prevents the system from showing irrelevant options, ensuring the user provides "Clean Input" for the prediction engine.
+Why needed : This is a Data Cleaning step. It prevents the system from showing irrelevant options, ensuring the user provides "Clean Input" for the prediction engine.
 
-3. The Prediction Engine (Weighted Logic)
+### 3. The Prediction Engine 
 Function: predict_wait()
 
 How it works: 1. It calculates the Base Average (the mathematical mean) for that specific time.
 2. It checks if the dish is a "Popular" item (a crowd-puller).
 3. It applies a Weighted Coefficient (+15 minutes for popular items, -5 for standard ones).
 
-Why it matters: This mimics Heuristic Regression. It recognizes that "Time" isn't the only factor; the "Quality of Food" is a high-weight feature that significantly changes the outcome.
+Why needed : This mimics Heuristic Regression. It recognizes that "Time" isn't the only factor; the "Quality of Food" is a high-weight feature that significantly changes the outcome.
 
-4. Interactive Interface & Validation
+### 4. Interactive Interface & Validation
 Logic: Main Execution Block
 
 How it works: This is the "Control Room" of the script. It manages user inputs and uses strict if/else guardrails to catch errors.
 
-Why it matters: This represents Error Handling. If a user enters a time when a mess is closed, the system identifies it as "Not a mess timing" rather than giving a false or "hallucinated" prediction.
+Why needed : This represents Error Handling. If a user enters a time when a mess is closed, the system identifies it as "Not a mess timing" rather than giving a false or "hallucinated" prediction.
 
-5. Data Visualization (Explainable AI)
+### 5. Data Visualization (Explainable AI)
 Logic: plt.bar(...)
 
 How it works: Using the matplotlib library, the code produces a visual comparison between the general average and today’s specific prediction.
 
-Why it matters: This provides Explainability (XAI). It proves to the user why the wait time is higher than usual, making the AI's logic transparent and easy to trust.
+Why needed : This provides Explainability (XAI). It proves to the user why the wait time is higher than usual, making the AI's logic transparent and easy to trust.
 
-🚀 How to Run
-Install Requirements:
+## How to use
+### Install Requirements:
 
-Bash
 pip install matplotlib
-Run the Script:
 
-Bash
-python mess_assistant.py
-Follow the Steps: Select a caterer, choose a valid timing, and pick a dish to see the visual crowd analysis.
+### Run the Script:
+
+python MessPrediction.py
+
+### Follow the Steps: 
+
+Select a caterer, choose a valid timing, and pick a dish to see the visual crowd analysis.

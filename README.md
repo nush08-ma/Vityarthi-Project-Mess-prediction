@@ -13,7 +13,7 @@ A data-driven Python application designed to solve the real-world problem of unp
 
   5. Input Validation: Prevents processing errors by cross-referencing user inputs with historical schedules.
 
-## Technical Block Explanation
+## Code Blocks Explanation
 ### 1. The Persistence Layer (SQL Database)
 Function: initialize_db()
 

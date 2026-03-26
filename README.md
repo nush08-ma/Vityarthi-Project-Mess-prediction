@@ -51,15 +51,60 @@ How it works: Using the matplotlib library, the code produces a visual compariso
 
 Why needed : This provides Explainability (XAI). It proves to the user why the wait time is higher than usual, making the AI's logic transparent and easy to trust.
 
-## How to use
-### Install Requirements:
+## Getting Started
 
-pip install matplotlib
+Follow these steps to set up the environment and run the project on your
 
-### Run the Script:
+### Prerequisites
+Ensure you have Python 3.x installed on your system.
+
+### Environment Setup
+It is recommended to use a virtual environment to keep dependencies organized.
+#### Create a virtual environment
+python -m venv venv
+
+#### Activate it (Windows)
+.\venv\Scripts\activate
+
+#### Activate it (Mac/Linux)
+source venv/bin/activate
+
+### Install Dependencies
+
+The project requires the matplotlib library for data visualization. Install it using pip:
+'''pip install matplotlib'''
+
+### Configuration & Execution
+The system is designed to be "Zero-Configuration." It will automatically create and seed the database upon the first execution.
+
+Run the application:
 
 python MessPrediction.py
 
-### Follow the Steps: 
+## How to Use
 
-Select a caterer, choose a valid timing, and pick a dish to see the visual crowd analysis.
+Select Mess: Choose from the list of registered caterers (e.g., Mayuri, Safal).
+
+Select Timing: Input the planned hour (e.g., 1 PM or 8 PM).
+
+Select Dish: Choose a dish from the dynamic menu provided for that mess.
+
+Analyze Results: View the numerical AI prediction in the terminal and the comparative analysis in the popup graph.
+
+## Project Structure
+
+MessPrediction.py: The main Python script containing the application logic and CLI.
+
+vit_campus_ai.db: SQLite database file (Auto-generated on first run).
+
+README.md: Project documentation.
+
+## Technical Stack
+
+Language: Python 3.x 
+
+Database: SQLite3 
+
+Visualization: Matplotlib
+
+Architecture: Two-Tier (Application & Data Layer)

@@ -60,13 +60,13 @@ Ensure you have Python 3.x installed on your system.
 
 ### Environment Setup
 It is recommended to use a virtual environment to keep dependencies organized.
-#### Create a virtual environment
+#### Create a virtual environment :
 python -m venv venv
 
-#### Activate it (Windows)
+#### Activate it (Windows) :
 .\venv\Scripts\activate
 
-#### Activate it (Mac/Linux)
+#### Activate it (Mac/Linux) :
 source venv/bin/activate
 
 ### Install Dependencies
